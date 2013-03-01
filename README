@@ -2,5 +2,9 @@ This is my development site on Ubuntu.
 
 All testing and practice happens here before I move to my site at RonaldSnyder.net.
 
-All of the apps and status will be updated here.  I am going to try to add a readme file to every app and what it does.
+Applications and status will be updated here. 
+
+Polls Application is the official Django Tutorial as followed https://docs.djangoproject.com/en/1.4/intro/tutorial01/
+
+Tweeeter (In Progress)  Application that will get a list of tweets and output them to a page.
 
