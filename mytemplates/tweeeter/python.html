@@ -1,0 +1,11 @@
+<h1>Test Python Page</h1>
+
+{% if latest_python_tweets %}
+    <ul>
+    {% for ptweet in latest_python_tweets%}
+        <li><a href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Tweets Available</p>
+{% endif %}

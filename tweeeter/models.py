@@ -1,5 +1,4 @@
 from django.db import models
-import datetime
 
 class PythonTweets(models.Model):
     tweetUsr = models.CharField(max_length=200)
