@@ -1,11 +1,21 @@
+<head>
+<link href="/media/css/tweeeter.css" rel="stylesheet" media="screen">
+</head>
 <h1>Test Python Page</h1>
 
+<div class ="container">
 {% if latest_python_tweets %}
     <ul>
     {% for ptweet in latest_python_tweets%}
-        <li><a href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a></li>
+        <div class="tweeeter">
+        	<span class="tweetUsr">{{ptweet.tweetUsr}}</span>
+        	<a class ="tweetUsr" href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a>
+        </div>
     {% endfor %}
     </ul>
 {% else %}
     <p>No Tweets Available</p>
 {% endif %}
+
+<!--End of Div-->
+</div>
