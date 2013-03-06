@@ -1,21 +1,42 @@
-<head>
-<link href="/media/css/tweeeter.css" rel="stylesheet" media="screen">
-</head>
-<h1>Test Python Page</h1>
+<html>
+	<head>
+		<link href="/media/css/tweeeter.css" rel="stylesheet" media="screen">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/media/js/jquery.masonry.min.js" type="text/javascript"></script>
+	</head>
+	<script type="text/javascript">
+	$(function(){
+  		$('#container').masonry(
+  		{
+  		   itemSelector: '.tweeeter',
+  			columnWidth : 340
+  		});
+		});
+	</script>
+	<body>
+	<h1 class="tweeterTitle">Python Tweets!</h1>
+	<div class="fun">
+		If a Python Tweets will anyone hear it?
 
-<div class ="container">
-{% if latest_python_tweets %}
-    <ul>
-    {% for ptweet in latest_python_tweets%}
-        <div class="tweeeter">
-        	<span class="tweetUsr">{{ptweet.tweetUsr}}</span>
-        	<a class ="tweetUsr" href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a>
-        </div>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No Tweets Available</p>
-{% endif %}
+	
+		<p>Inspired by <a href="http://jmduke.net/post/39316262948/from-concept-to-completion-in-four-hours">Justin Duke</a>.
+		This page is created in Django and gets tweets about Python Programming </p> 
+	</div>
+	<div id="container">
+		{% if latest_python_tweets %}
 
-<!--End of Div-->
-</div>
+    	{% for ptweet in latest_python_tweets%}
+        	<div class="tweeeter">
+        		<div class="tweetUsr">{{ptweet.tweetUsr}} <br /></div>
+        		<div class ="tweetText"><a  href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a></div>
+        	</div>
+    	{% endfor %}
+
+		{% else %}
+    		<p>No Tweets Available</p>
+		{% endif %}
+
+	
+	</div> <!--End of container-->
+</body>
+</html>

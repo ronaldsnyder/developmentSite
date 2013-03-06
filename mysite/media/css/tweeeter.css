@@ -1,3 +1,40 @@
-.tweeeter {
-color:red;
+body{
+	background:rgb(000,000,092);
+	color:rgb(215,064,008);
+	font-family: "Brush Script MT", cursive;
+	margin:20px 100px 100px 100px;	
 }
+.tweeterTitle{
+	text-align:center;
+}
+.fun{
+	text-align:center;
+	font-variant:small-caps;	
+}
+.tweetUsr{
+	text-align:center;
+	width:300px;
+	font-weight:900;	
+	background:rgb(215,064,008);
+	color:rgb(000,000,092);
+	font-variant:small-caps;
+	font-size:20px;
+}
+
+.tweeeter {
+	width:300px;
+    margin-bottom:30px;
+}
+
+#container{
+	margin-top:20px;
+	margin-right:20px;
+}
+
+#container a:link, a:active, a:visited{
+	color:rgb(215,064,008);
+	font-weight:600;	
+	text-decoration:none;
+}
+
+
