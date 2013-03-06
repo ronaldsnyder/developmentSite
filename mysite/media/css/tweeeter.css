@@ -2,14 +2,19 @@ body{
 	background:rgb(000,000,092);
 	color:rgb(215,064,008);
 	font-family: "Brush Script MT", cursive;
-	margin:20px 100px 100px 100px;	
+	margin:20px 100px 100px 100px;
+
 }
 .tweeterTitle{
 	text-align:center;
 }
 .fun{
 	text-align:center;
-	font-variant:small-caps;	
+	font-variant:small-caps;
+		font-weight:900;			
+}
+.fun a:link, a:active, a:visited{
+	color:rgb(215,064,008);
 }
 .tweetUsr{
 	text-align:center;
@@ -32,7 +37,7 @@ body{
 }
 
 #container a:link, a:active, a:visited{
-	color:rgb(215,064,008);
+	color:white;
 	font-weight:600;	
 	text-decoration:none;
 }
