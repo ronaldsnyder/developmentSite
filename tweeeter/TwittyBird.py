@@ -6,11 +6,12 @@ import json
 from tweeeter.models import PythonTweets
 from time import gmtime, strftime
 
+PythonTweets.objects.all().delete()
 todays_date = strftime('%Y-%m-%d %H:%M:%S', gmtime())
 
 #change below to customize the results
 search_term = 'python+programming'
-search_count= '25'
+search_count= '50'
 twitter_search = 'http://search.twitter.com/search.json?q=' + search_term + '&rpp=' + search_count + '&result_type=mixed&lang=en'
 
 #open twitter and get what you want.

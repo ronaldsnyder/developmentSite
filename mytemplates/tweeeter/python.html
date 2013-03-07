@@ -5,12 +5,13 @@
 		<script src="/media/js/jquery.masonry.min.js" type="text/javascript"></script>
 	</head>
 	<script type="text/javascript">
-	$(function(){
-  		$('#container').masonry(
-  		{
-  		   itemSelector: '.tweeeter',
-  			columnWidth : 340
-  		});
+		$(function()
+		{
+  			$('#container').masonry(
+  			{
+  		   		itemSelector: '.tweeeter',
+  				columnWidth : 340
+  			});
 		});
 	</script>
 	<body>
@@ -24,19 +25,19 @@
 	</div>
 	<div id="container">
 		{% if latest_python_tweets %}
-
     	{% for ptweet in latest_python_tweets%}
         	<div class="tweeeter">
-        		<div class="tweetUsr">{{ptweet.tweetUsr}} <br /></div>
-        		<div class ="tweetText"><a  href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a></div>
-        	</div>
+        		<div class="tweetUsr">
+        			{{ptweet.tweetUsr}} <br />
+        		</div> 	<!--End of tweetUsr-->
+        		<div class ="tweetText">
+        			<a  href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a>
+        		</div> <!--End of tweetText-->
+      		 </div> <!--End of tweeeter-->
     	{% endfor %}
-
 		{% else %}
     		<p>No Tweets Available</p>
-		{% endif %}
-
-	
+		{% endif %}	
 	</div> <!--End of container-->
 </body>
 </html>
