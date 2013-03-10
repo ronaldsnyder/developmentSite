@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/media/js/jquery.masonry.min.js" type="text/javascript"></script>
+		<link href="/media/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/media/css/hometown.css" rel="stylesheet" media="screen">
+	</head>
+	<script type="text/javascript">
+		$(function()
+		{
+  			$('#masonrycontainer').masonry(
+  			{
+  		   		itemSelector: '.tweeeter',
+  				columnWidth : 290
+  			});
+		});
+	</script>
+	<body>
+	    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/resume/resume.html">Ron Snyder</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/resume/resume.html">Home</a></li>
+              <li><a href="/resume/about.html">About</a></li>
+              <li><a href="/resume/contact.html">Contact</a></li>
+              <li><a href="/resume/education.html">Education</a></li>
+              <li><a href="/resume/experience.html">Experience</a></li>
+              <li><a href="/resume/skills.html">Skills</a></li>                                         
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                   <li><a href="/resume/resume.html">Home</a></li>
+                  <li><a href="/resume/about.html">About</a></li>
+                  <li><a href="/resume/contact.html">Contact</a></li>
+                  <li><a href="/resume/education.html">Education</a></li>
+                  <li><a href="/resume/experience.html">Experience</a></li>
+                  <li><a href="/resume/skills">Skills</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Projects</li>
+                  <li><a href="/tweeeter/fenton">Home Town Tweets</a></li>
+                  <li><a href="/resume/project2.html">Coming Soon</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+	<div class="hero-unit">
+		<h1 class="tweeterTitle">Fenton Tweets!</h1>
+		What is going on in Fenton, Michigan?	
+		<p>Inspired by <a href="http://jmduke.net/post/39316262948/from-concept-to-completion-in-four-hours">Justin Duke</a>.
+		This page is created in Django and gets tweets about Fenton, Michigan </p> 
+	</div>
+	
+	
+	<div id="masonrycontainer">
+		{% if fenton_tweets %}
+    	{% for ptweet in fenton_tweets%}
+        	<div class="tweeeter">
+        			<h3 class="tweetUsr">{{ptweet.tweetUsr}}</h3> 
+        			<div class="tweetTxt">
+        				<a href="{{ ptweet.tweetUrl }}/">{{ ptweet.tweetText}}</a>
+        			</div>
+      		 </div> <!--End of class="tweeeter"-->
+    	{% endfor %}
+		{% else %}
+    		<p>No Tweets Available</p>
+		{% endif %}	
+	</div> <!--End of masonrycontainer-->
+	</div> <!--End of container-->
+    <script src="/media/bootstrap/js/bootstrap.js"></script>
+    <script src="/media/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

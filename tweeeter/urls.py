@@ -5,4 +5,5 @@ import tweeeter.views
 
 urlpatterns = patterns('',
     (r'^python', 'tweeeter.views.python_search'),
+    (r'^fenton', 'tweeeter.views.fenton_search'),
     )
